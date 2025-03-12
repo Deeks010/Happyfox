@@ -119,16 +119,20 @@ Rules are defined in JSON format with conditions and actions:
 ## Screenshots
 
 ### Email Management Interface
-![Email Management](assets/Email_management.png)
+![Email Management](assets\Email_management.png)
 *Real-time email synchronization and processing dashboard*
 
 ### Rule Creation Interface
-![Rule Creation](assets/Create_rules.png)
+![Rule Creation](assets\Create_rules.png)
 *Intuitive rule configuration with dynamic conditions*
 
 ### Processing rules interface
-![Rule Creation](assets/process_rules.png)
+![Rule Creation](assets\process_rules.png)
 *Processing of rules with fetched emails*
+
+### Existing rules interface
+![Rule Creation](assets\Existing rules.png)
+*Rules that have been created already*
 
 ## Contributing
 
