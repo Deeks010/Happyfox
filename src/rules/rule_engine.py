@@ -8,7 +8,7 @@ Handles email rule processing and action execution.
 import json
 from datetime import datetime, timedelta
 from typing import List, Dict, Any
-from email_handler import EmailHandler
+from src.email.email_handler import EmailHandler
 
 class RuleEngine:
     """Manages email rule processing and actions."""

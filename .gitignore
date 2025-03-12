@@ -30,7 +30,7 @@ ENV/
 .vscode/
 *.swp
 *.swo
-
+email_store.db
 # Application Specific
 credentials.json
 token.pickle
