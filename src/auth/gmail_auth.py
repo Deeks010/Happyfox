@@ -12,10 +12,6 @@ from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 import imaplib
-from src.auth.gmail_auth import GmailAuthManager
-
-# Re-export the GmailAuthManager class
-__all__ = ['GmailAuthManager']
 
 class GmailAuthManager:
     """Manages Gmail API authentication and service creation."""

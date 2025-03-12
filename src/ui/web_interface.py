@@ -2,10 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from datetime import datetime, timedelta
-from src.auth.gmail_auth import GmailAuthManager
-from src.email.email_handler import EmailHandler
-from src.rules.rule_engine import RuleEngine
-from src.database.data_store import EmailDataStore
+from ..auth.gmail_auth import GmailAuthManager
+from ..email.email_handler import EmailHandler
+from ..rules.rule_engine import RuleEngine
+from ..database.data_store import EmailDataStore
 
 class WebInterface:
     def __init__(self):

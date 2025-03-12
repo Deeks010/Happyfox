@@ -4,12 +4,31 @@ Transform your Gmail inbox management with our intelligent rule-based automation
 
 ## Key Features
 
-- Secure Gmail integration with OAuth 2.0 authentication
-- Real-time email synchronization and processing
-- Robust SQLite-powered email storage system
-- Intelligent rule engine with flexible condition matching
-- Comprehensive email action system (labeling, status updates)
-- Modern, intuitive Streamlit dashboard
+- 🔒 Secure Gmail integration with OAuth 2.0 authentication
+- ⚡ Real-time email synchronization and processing
+- 💾 Robust SQLite-powered email storage system
+- 🧠 Intelligent rule engine with flexible condition matching
+- 🔄 Comprehensive email action system (moving, marking as read)
+- 🎨 Modern, intuitive Streamlit dashboard
+
+## Project Structure
+
+```plaintext
+├── src/                    # Source code directory
+│   ├── auth/              # Authentication related modules
+│   │   └── gmail_auth.py  # Gmail OAuth2 implementation
+│   ├── database/          # Database operations
+│   │   └── data_store.py  # Email and rule storage
+│   ├── email/             # Email handling
+│   │   └── email_handler.py # Email operations
+│   ├── rules/             # Rule processing
+│   │   └── rule_engine.py # Rule execution logic
+│   └── ui/                # User interface
+│       └── web_interface.py # Streamlit UI components
+├── assets/                # Application assets
+├── requirements.txt       # Project dependencies
+└── rules.json            # Rule definitions
+```
 
 ## Getting Started
 
@@ -21,90 +40,84 @@ Transform your Gmail inbox management with our intelligent rule-based automation
 
 ### Installation
 
-1. Set up your environment:
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd email-rule-manager
+```
+
+2. Set up your environment:
 ```bash
 pip install -r requirements.txt
 ```
 
-2. Google API Configuration:
+3. Google API Configuration:
    - Navigate to [Google Cloud Console](https://console.cloud.google.com/)
-   - Set up a new project
-   - Configure Gmail API access
-   - Generate OAuth 2.0 credentials
-   - Save the credentials file as `credentials.json` in the project directory
+   - Create a new project
+   - Enable Gmail API
+   - Configure OAuth 2.0 credentials
+   - Download and save credentials as `credentials.json` in the project root
 
-## Application Structure
+## Usage
 
-```plaintext
-├── auth_manager.py     # OAuth authentication system
-├── data_store.py      # Email database management
-├── email_handler.py   # Email operations controller
-├── rule_engine.py     # Rule processing system
-├── models.py         # Data structures
-├── web_interface.py  # Streamlit UI components
-├── requirements.txt  # Dependencies
-└── rules.json       # Rule definitions
-```
-
-## Interface Preview
-
-### Email Fetching Dashboard
-![Email Fetching Interface](path_to_fetch_emails_screenshot.png)
-*Real-time email synchronization and storage visualization*
-
-### Rule Creation Interface
-![Rule Creation Dashboard](path_to_create_rules_screenshot.png)
-*Intuitive rule configuration and management system*
-
-## Quick Start Guide
-
-1. Launch the application:
+1. Start the application:
 ```bash
-python -m streamlit run web_interface.py
+python -m streamlit run src/ui/web_interface.py
 ```
 
-2. Complete the Gmail authentication process
-3. Access the rule management interface
-4. Monitor email processing activities
+2. Authenticate with Gmail:
+   - Click the "🔐 Authenticate" button in the sidebar
+   - Follow the OAuth2 flow to grant access
+   - Once authenticated, you'll see a success message
 
-## Rule Configuration Format
+3. Managing Emails:
+   - Use the "📥 Fetch" button to sync recent emails
+   - View email statistics and timeline
+   - Monitor processing status
 
-Customize email processing with JSON-based rules:
+4. Creating Rules:
+   - Navigate to the Rules tab
+   - Click "Create Rule"
+   - Set conditions and actions
+   - Save and process emails
+
+## Rule Configuration
+
+Rules are defined in JSON format with conditions and actions:
 
 ```json
 {
-  "rules": [
+  "name": "Important Emails",
+  "match_type": "any",
+  "conditions": [
     {
-      "name": "Priority Messages",
-      "match_type": "any",
-      "conditions": [
-        {
-          "field": "sender",
-          "operation": "contains",
-          "value": "priority@company.com"
-        }
-      ],
-      "actions": [
-        {
-          "type": "apply_label",
-          "label": "Priority"
-        }
-      ]
+      "field": "From",
+      "operation": "contains",
+      "value": "important@company.com"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Move Message",
+      "value": "Important"
     }
   ]
 }
 ```
 
-## Development
+## Screenshots
 
-Run the test suite:
-```bash
-python -m pytest tests/
-```
+### Email Management Interface
+![Email Management](assets/email_interface.png)
+*Real-time email synchronization and processing dashboard*
+
+### Rule Creation Interface
+![Rule Creation](assets/rule_interface.png)
+*Intuitive rule configuration with dynamic conditions*
 
 ## Contributing
 
-We welcome contributions! Please follow these steps:
+Contributions are welcome! Please follow these steps:
 1. Fork the repository
 2. Create a feature branch
 3. Submit a pull request
