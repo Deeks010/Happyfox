@@ -131,7 +131,7 @@ Rules are defined in JSON format with conditions and actions:
 *Processing of rules with fetched emails*
 
 ### Existing rules interface
-![Rule Creation](assets\Existing rules.png)
+![Rule Creation](assets\Existing_rules.png)
 *Rules that have been created already*
 
 ## Contributing
