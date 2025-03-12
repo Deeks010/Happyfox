@@ -1,0 +1,20 @@
+{
+  "rules": [
+    {
+      "name": "Mark Unread as Read",
+      "match_type": "all",
+      "conditions": [
+        {
+          "field": "is_read",
+          "operation": "equals",
+          "value": false
+        }
+      ],
+      "actions": [
+        {
+          "type": "mark_as_read"
+        }
+      ]
+    }
+  ]
+}
