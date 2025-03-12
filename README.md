@@ -15,19 +15,30 @@ Transform your Gmail inbox management with our intelligent rule-based automation
 
 ```plaintext
 ├── src/                    # Source code directory
+│   ├── __init__.py
 │   ├── auth/              # Authentication related modules
+│   │   ├── __init__.py
 │   │   └── gmail_auth.py  # Gmail OAuth2 implementation
 │   ├── database/          # Database operations
+│   │   ├── __init__.py
 │   │   └── data_store.py  # Email and rule storage
 │   ├── email/             # Email handling
+│   │   ├── __init__.py
 │   │   └── email_handler.py # Email operations
 │   ├── rules/             # Rule processing
+│   │   ├── __init__.py
 │   │   └── rule_engine.py # Rule execution logic
 │   └── ui/                # User interface
+│       ├── __init__.py
 │       └── web_interface.py # Streamlit UI components
 ├── assets/                # Application assets
+├── auth_manager.py        # Authentication manager
+├── data_store.py         # Data storage operations
 ├── requirements.txt       # Project dependencies
-└── rules.json            # Rule definitions
+├── rule_engine.py        # Rule processing logic
+├── rules.json            # Rule definitions
+├── web_interface.py      # Web interface components
+└── .gitignore            # Git ignore file
 ```
 
 ## Getting Started
@@ -108,15 +119,15 @@ Rules are defined in JSON format with conditions and actions:
 ## Screenshots
 
 ### Email Management Interface
-![Email Management](assets/Email_management .png)
+![Email Management](assets/Email_management.png)
 *Real-time email synchronization and processing dashboard*
 
 ### Rule Creation Interface
-![Rule Creation](assets\Create_rules.png)
+![Rule Creation](assets/Create_rules.png)
 *Intuitive rule configuration with dynamic conditions*
 
 ### Processing rules interface
-![Rule Creation](assets\process_rules.png)
+![Rule Creation](assets/process_rules.png)
 *Processing of rules with fetched emails*
 
 ## Contributing
